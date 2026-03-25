@@ -5,7 +5,7 @@ export const authConfig = {
   pages: {
     signIn: '/login',
   },
-  secret: process.env.AUTH_SECRET,
+  secret: process.env.AUTH_SECRET || "super-long-temporary-secret-for-vercel-only-2026",
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
